@@ -22,14 +22,11 @@ public class HomeControllerIntegrationTests {
   @Test
   public void shouldAdd_AppUser_ToDb() {
 
-    ResponseEntity<AppUser> responseEntity = restTemplate
-      .postForEntity("http://localhost:9000/user/Abderrazak BOUADMA",
-        MockHttpServletRequest.DEFAULT_PROTOCOL,
-        AppUser.class);
+    ResponseEntity<AppUser> responseEntity = restTemplate.postForEntity("http://localhost:8080/user/Abderrazak", MockHttpServletRequest.DEFAULT_PROTOCOL, AppUser.class);
 
     final AppUser appUser = responseEntity.getBody();
 
     Assertions.assertThat(appUser).isNotNull();
-    Assertions.assertThat(appUser.getUsername()).isNotNull().isEqualTo("Abderrazak BOUADMA");
+    Assertions.assertThat(appUser.getUsername()).isNotNull().isEqualTo("Abderrazak");
   }
 }

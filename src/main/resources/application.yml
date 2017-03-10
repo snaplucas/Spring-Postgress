@@ -1,4 +1,6 @@
 spring:
+  main:
+    banner-mode: "off"
   datasource:
     url: jdbc:postgresql://localhost:5432/Teste
     username: postgres
@@ -6,7 +8,7 @@ spring:
     platform: POSTGRESQL
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
-
-
+server:
+  port: 8080
