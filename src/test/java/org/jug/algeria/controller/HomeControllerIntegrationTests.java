@@ -1,6 +1,5 @@
 package org.jug.algeria.controller;
 
-
 import org.assertj.core.api.Assertions;
 import org.jug.algeria.domain.AppUser;
 import org.junit.Test;
@@ -17,16 +16,16 @@ import org.springframework.web.client.RestTemplate;
 @TestPropertySource(locations = {"classpath:application-test.yml"})
 public class HomeControllerIntegrationTests {
 
-  RestTemplate restTemplate = new RestTemplate();
+    private RestTemplate restTemplate = new RestTemplate();
 
-  @Test
-  public void shouldAdd_AppUser_ToDb() {
+    @Test
+    public void shouldAdd_AppUser_ToDb() {
 
-    ResponseEntity<AppUser> responseEntity = restTemplate.postForEntity("http://localhost:8080/user/Abderrazak", MockHttpServletRequest.DEFAULT_PROTOCOL, AppUser.class);
+        ResponseEntity<AppUser> responseEntity = restTemplate.postForEntity("http://localhost:8080/user/Abderrazak", MockHttpServletRequest.DEFAULT_PROTOCOL, AppUser.class);
 
-    final AppUser appUser = responseEntity.getBody();
+        final AppUser appUser = responseEntity.getBody();
 
-    Assertions.assertThat(appUser).isNotNull();
-    Assertions.assertThat(appUser.getUsername()).isNotNull().isEqualTo("Abderrazak");
-  }
+        Assertions.assertThat(appUser).isNotNull();
+        Assertions.assertThat(appUser.getUsername()).isNotNull().isEqualTo("Abderrazak");
+    }
 }
