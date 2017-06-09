@@ -1,8 +1,8 @@
 package org.jug.algeria.controller;
 
 import org.jug.algeria.domain.AppUser;
+import org.jug.algeria.domain.IUserRepository;
 import org.jug.algeria.domain.IUserService;
-import org.jug.algeria.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
