@@ -6,22 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UserRepository implements IUserRepository {
+public class UserRepositoryAdapter implements IUserRepository {
 
-    private final UserCrudRepository userCrudRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    public UserRepository(UserCrudRepository userCrudRepository) {
-        this.userCrudRepository = userCrudRepository;
+    public UserRepositoryAdapter(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override
     public AppUser save(AppUser user) {
-        return userCrudRepository.save(user);
+        return userRepository.save(user);
     }
 
     @Override
     public Iterable<AppUser> findAll() {
-        return userCrudRepository.findAll();
+        return userRepository.findAll();
     }
 }

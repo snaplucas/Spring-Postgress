@@ -3,5 +3,5 @@ package org.jug.algeria.repository;
 import org.jug.algeria.domain.AppUser;
 import org.springframework.data.repository.CrudRepository;
 
-interface UserCrudRepository extends CrudRepository<AppUser, Long> {
+interface UserRepository extends CrudRepository<AppUser, Long> {
 }
